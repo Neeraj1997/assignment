@@ -1,0 +1,37 @@
+import "./App.css";
+import { Routes, Route, BrowserRouter, useNavigate } from "react-router-dom";
+import Login from "./components/Auth/Login";
+import Home from "./components/View/Home";
+import AuthCheck from "./components/utils/authCheck";
+import Signup from "./components/Auth/Signup";
+import Navbar from "./components/View/navbar/Navbar";
+import UserAccount from "./components/Auth/UserAccount";
+function App() {
+  return (
+    <BrowserRouter>
+    <Navbar/>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route
+          path="/"
+          element={
+            <AuthCheck>
+              <Home />
+            </AuthCheck>
+          }
+        />
+           <Route
+          path="/useraccount"
+          element={
+            <AuthCheck>
+              <UserAccount />
+            </AuthCheck>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
