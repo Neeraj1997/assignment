@@ -8,6 +8,7 @@ import Navbar from "./components/View/navbar/Navbar";
 import UserAccount from "./components/Auth/UserAccount";
 function App() {
   return (
+    // there were a lot more changes which I wanted to do but could'nt due to time constrains if more time alloted I can.
     <BrowserRouter>
     <Navbar/>
       <Routes>
